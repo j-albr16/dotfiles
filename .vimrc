@@ -49,11 +49,6 @@ call plug#begin('~/.vim/plugged')
 
 "Git Functionality
 Plug 'tpope/vim-fugitive'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-"Python Auto Completion
-"Plug 'davidhalter/jedi-vim'
-" Vim Syntax Checker
-"Plug 'https://github.com/vim-syntastic/syntastic.git'
 "Theme
 Plug 'morhetz/gruvbox'
 "File Type Supporchr4/nginx.vimt
@@ -88,32 +83,6 @@ autocmd InsertLeave * set nocul
 colo gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:gruvbox_contrast_dark='medium'
-
-
-""""Syntastic Settings"""
-""Status Line Configurations
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-""General Syntastic Settings
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-
-""Syntastic Message Linters
-"let g:syntastic_python_checkers = ['pylint']
-"let g:syntastic_tex_checkers = ['chktex, lacheck']
-"let g:syntastic_json_checkers = ['jsonlint']
-"let g:syntastic_sh_checkers = ['bashate', 'sh']
-"let g:syntastic_yaml_checkers = ['yamllint']
-
-""Disable all style Messages
-"let g:syntastic_quiet_messages = {"type" : "style"}
-
-"""Prettier"""
-let g:prettier#autoformat = 0
 
 """UltiSnips Settings"""
 let g:UltiSnipsExpandTrigger="<tab>"
