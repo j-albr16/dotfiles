@@ -81,7 +81,7 @@ autocmd InsertLeave * set nocul
 
 "Gruvbox
 colo gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
+"autocmd vimenter * ++nested colorscheme gruvbox
 let g:gruvbox_contrast_dark='medium'
 
 """UltiSnips Settings"""
@@ -91,4 +91,4 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 """CoC Configurations"""
-
+let g:coc_disable_startup_warning = 1
