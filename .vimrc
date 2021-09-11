@@ -51,8 +51,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 "Theme
 Plug 'morhetz/gruvbox'
-"File Type Supporchr4/nginx.vimt
-Plug 'https://github.com/pedrohdz/vim-yaml-folds'
 "nginx
 Plug 'chr4/nginx.vim'
 "Snippets
