@@ -87,6 +87,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
-
 """CoC Configurations"""
+
 let g:coc_disable_startup_warning = 1
+let g:coc_global_extensions = ['coc-json', 'coc-docker', 'coc-sh', 'coc-git', 'coc-yaml', 'coc-snippets', 'coc-python']
+inoremap <silent><expr> <c-@> coc#refresh()
