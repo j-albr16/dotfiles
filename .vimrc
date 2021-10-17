@@ -10,8 +10,6 @@ set nu
 set nowrap
 set smartcase
 set noswapfile
-set undodir=~/.vim/undodir
-set undofile
 set incsearch
 set guifont=Ubuntu
 set linespace=7
@@ -25,6 +23,8 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 "File Type settings
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType nginx setlocal commentstring=#
+" yaml for docker-compose files
+autocmd BufRead,BufNewFile docker-compose set ft=yaml
 
 "Small Cursor in Insert Mode
 let &t_SI = "\e[6 q"
