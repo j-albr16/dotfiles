@@ -66,6 +66,8 @@ Plug 'tpope/vim-surround'
 Plug 'ekalinin/Dockerfile.vim'
 "Kubernetes Language Server (Yaml Support)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Vim File Collaboration
+Plug 'FredKSchott/CoVim'
 
 
 call plug#end()
@@ -90,5 +92,5 @@ let g:UltiSnipsEditSplit="vertical"
 """CoC Configurations"""
 
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = ['coc-json', 'coc-docker', 'coc-sh', 'coc-git', 'coc-yaml', 'coc-snippets', 'coc-python', 'coc-vimtex']
+let g:coc_global_extensions = ['coc-json', 'coc-docker', 'coc-sh', 'coc-git', 'coc-yaml', 'coc-snippets', 'coc-python', 'coc-texlab']
 inoremap <silent><expr> <c-@> coc#refresh()
