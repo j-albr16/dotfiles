@@ -20,7 +20,9 @@ set colorcolumn=80
 "Correct Comment Highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+filetype plugin indent on
 "File Type settings
+autocmd FileType cabal setlocal commentstring=--\ %s
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType nginx setlocal commentstring=#
 " yaml for docker-compose files
@@ -35,8 +37,8 @@ let mapleader = " "
 
 nmap <Leader> <Space>
 nmap <Leader>q @
-nmap <Leader>hh :tabp
-nmap <Leader>ll :tabn
+nmap <Leader>hh :tabp<Cr>
+nmap <Leader>ll :tabn<Cr>
 
 inoremap <C-C> <ESC>
 
@@ -68,6 +70,9 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Vim File Collaboration
 Plug 'FredKSchott/CoVim'
+"Haskell Colorscheme
+" Plug 'https://github.com/neovimhaskell/haskell-vim.git'
+Plug 'romainl/Apprentice'
 
 
 call plug#end()
@@ -82,7 +87,9 @@ autocmd InsertLeave * set nocul
 "Gruvbox
 colo gruvbox
 "autocmd vimenter * ++nested colorscheme gruvbox
-let g:gruvbox_contrast_dark='medium'
+" let g:gruvbox_contrast_dark='medium'
+highlight link VarId Identifier
+highlight link ConId Type
 
 """UltiSnips Settings"""
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -94,3 +101,14 @@ let g:UltiSnipsEditSplit="vertical"
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = ['coc-json', 'coc-docker', 'coc-sh', 'coc-git', 'coc-yaml', 'coc-snippets', 'coc-python', 'coc-texlab']
 inoremap <silent><expr> <c-@> coc#refresh()
+
+"""Haskell Colorscheme
+" let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+" let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+" let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+" let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+" let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+" let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+" let g:haskell_backpack = 1                " to enable highlighting of backpack keywordslet
+" let g:haskell_classic_highlighting = 0
+" let g:haskell_disable_TH = 0
