@@ -121,6 +121,17 @@ _G.packer_plugins = {
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
+  harpoon = {
+    config = { "require('config.harpoon')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -136,13 +147,24 @@ _G.packer_plugins = {
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["memento.nvim"] = {
+    config = { "require('config.memento')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/memento.nvim",
+    url = "https://github.com/gaborvecsei/memento.nvim"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp-path", "cmp-buffer", "cmp-cmdline" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp", "cmp-path" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -155,10 +177,36 @@ _G.packer_plugins = {
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-dap"] = {
+    config = { "require('config.dap')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-projects"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-dap-projects",
+    url = "https://github.com/ldelossa/nvim-dap-projects"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -170,11 +218,22 @@ _G.packer_plugins = {
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ripgrep = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/ripgrep",
+    url = "https://github.com/BurntSushi/ripgrep"
+  },
   ["telescope.nvim"] = {
     config = { "require('config.telescope')" },
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    config = { "require('config.terminal')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ultisnips = {
     config = { "require('config.ultisnips')" },
@@ -182,22 +241,59 @@ _G.packer_plugins = {
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
   },
+  undotree = {
+    config = { "require('config.undotree')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-fugitive"] = {
+    config = { "require('config.vim-fugitive')" },
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-require('config.ultisnips')
-time([[Config for ultisnips]], false)
+-- Config for: harpoon
+time([[Config for harpoon]], true)
+require('config.harpoon')
+time([[Config for harpoon]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('config.telescope')
 time([[Config for telescope.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require('config.terminal')
+time([[Config for toggleterm.nvim]], false)
+-- Config for: undotree
+time([[Config for undotree]], true)
+require('config.undotree')
+time([[Config for undotree]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require('config.ultisnips')
+time([[Config for ultisnips]], false)
+-- Config for: memento.nvim
+time([[Config for memento.nvim]], true)
+require('config.memento')
+time([[Config for memento.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require('config.dap')
+time([[Config for nvim-dap]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('config.nvim-cmp')
@@ -206,12 +302,16 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-comment]], true)
 require('config.nvim_comment')
 time([[Config for nvim-comment]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require('config.vim-fugitive')
+time([[Config for vim-fugitive]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-nvim-lsp ]]
-vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-nvim-lsp ]]
+vim.cmd [[ packadd cmp-buffer ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

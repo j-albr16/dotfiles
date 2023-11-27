@@ -1,6 +1,57 @@
 
+local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
+local theme = require('telescope.themes')
+local wk = require('which-key')
 
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+local  opts = {
+    mode = 'n',
+    prefix = '<leader>',
+}
 
+local mappings = {
+    f = {
+        name = 'Find',
+        f = { builtin.find_files, 'Find Files' },
+        b = { builtin.buffers, 'Find Buffers' },
+        g = { builtin.git_files, 'Git Files' },
+        l = { builtin.live_grep, 'Live Grep' },
+        s = { function() 
+            builtin.grep_string({search = vim.fn.input("Grep String > ")})
+        end , 'Grep String' },
+    },
+}
 
+wk.register(mappings, opts)
+
+require('telescope').setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-c>"] = { "<esc>", type="command" },
+                ["<C-e>"] = "close",
+                ["<C-f>"] = "preview_scrolling_up",
+                ["<C-b>"] = "preview_scrolling_down",
+            },
+            n = {
+                ["<C-d>"] = "delete_buffer",
+                ["<C-c>"] = "close",
+                ["<C-f>"] = "preview_scrolling_up",
+                ["<C-b>"] = "preview_scrolling_down",
+                ["<C-j>"] = actions.toggle_selection + actions.move_selection_next,
+                ["<C-k>"] = actions.toggle_selection + actions.move_selection_previous,
+            }
+        }
+    },
+    pickers = {
+                find_files = {
+                  theme = "dropdown",
+                },
+                buffers = {
+                  theme = "dropdown",
+                },
+                git_files = {
+                  theme = "dropdown",
+                },
+    },
+})

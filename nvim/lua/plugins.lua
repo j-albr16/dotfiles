@@ -23,6 +23,8 @@ vim.cmd([[
   augroup end
 ]])
 
+-- pip modules
+-- pylsp-rope
 
 -- Install plugins here - `use ...`
 -- Packer.nvim hints
@@ -37,17 +39,9 @@ return require('packer').startup(function(use)
     use 'honza/vim-snippets'
     use 'quangnguyen30192/cmp-nvim-ultisnips'
     use 'wbthomason/packer.nvim'
+    use 'folke/which-key.nvim'
+    use 'BurntSushi/ripgrep'
     use 'tanvirtin/monokai.nvim'
-    use { 'neovim/nvim-lspconfig' }
-    use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
-    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
-    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
-    use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use { 'williamboman/mason.nvim' }
-    use { 'williamboman/mason-lspconfig.nvim'}
     use { "terrortylor/nvim-comment", config = [[require('config.nvim_comment')]] }
     use({
         "iamcco/markdown-preview.nvim",
@@ -59,11 +53,34 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} },
         config = [[require('config.telescope')]]
     }
-    ---------------------------------------
-    -- NOTE: PUT YOUR THIRD PLUGIN HERE --
-    ---------------------------------------
+    use {'gaborvecsei/memento.nvim', config=[[require('config.memento')]]}
+    use { 'github/copilot.vim' }
+    use {'ThePrimeagen/harpoon', config=[[require('config.harpoon')]]}  
+    use { 'mbbill/undotree', config=[[require('config.undotree')]]}
+    use { 'neovim/nvim-lspconfig' }
+    use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }
+    use { 'williamboman/mason.nvim' }
+    use { 'williamboman/mason-lspconfig.nvim'}
+    use {'L3MON4D3/LuaSnip'}
+    use {'saadparwaiz1/cmp_luasnip' }
+    use { 'tpope/vim-fugitive', config = [[require('config.vim-fugitive')]]}
+    use{ "akinsho/toggleterm.nvim", tag = '*', config = [[require('config.terminal')]]}
+    use 'folke/neodev.nvim'
+    use {'mfussenegger/nvim-dap', config = [[require('config.dap')]],
+        requires = {
+            'mfussenegger/nvim-dap-python',
+            'rcarriga/nvim-dap-ui',
+            {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+            'ldelossa/nvim-dap-projects' 
+        }
+    }
+
   
-    -- Automatically set up your configuration after cloning packer.nvim
+    -- Automatically set up your configuration\ after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()
