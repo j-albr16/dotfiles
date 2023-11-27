@@ -14,6 +14,7 @@ local mappings = {
         m = { '<cmd>:Git merge<CR>', 'Write' },
         d = { '<cmd>:Gdiffsplit<CR>', 'Write' },
         g = { '<cmd>:Git <CR>', 'Open Git' },
+        r = { '<cmd>:GRemove<CR>', 'Git Remove' },
     },
 }
 

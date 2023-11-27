@@ -41,6 +41,7 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 vim.keymap.set('v', "J", ":m '>+1<CR>gv'", opts)
 vim.keymap.set('v', "K", ":m '<-2<CR>gv'", opts)
+vim.keymap.set('v', '<leader>s', ':s///g<Left><Left>', opts)
 
 -- search
 local wk = require('which-key')
@@ -54,10 +55,7 @@ local mapping = {
 }
 wk.register(mapping, opts)
 
-local opts = {mode = 'v', noremap = true, silent = true}
-local mapping = {
-    ["<C-s>"] = {':s/<C-r><C-w>//g<Left><Left>', "Search and Replace Selection"},
-}
+
 
 
 
