@@ -8,7 +8,6 @@ local opts = {
 -- Terminal mode -
 ------------------
 --
-vim.keymap.set('t', '<C-c><C-c>', '<C-\\><C-n>')
 
 -----------------
 -- Normal mode --
@@ -30,7 +29,10 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
 vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- search mode
-vim.keymap.set('n', '<C-p>', ':Ex<cr>')
+vim.keymap.set('n', '<C-p>', vim.cmd.Ex)
+
+-- smart pasting
+vim.keymap.set('x', '<leader>p', '\"_dP', opts)
 
 -----------------
 -- Visual mode --
@@ -41,21 +43,19 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 vim.keymap.set('v', "J", ":m '>+1<CR>gv'", opts)
 vim.keymap.set('v', "K", ":m '<-2<CR>gv'", opts)
-vim.keymap.set('v', '<leader>s', ':s///g<Left><Left>', opts)
+vim.keymap.set('v', '<leader>s', ':%s/<CR>//g<Left><Left>', opts)
 
 -- search
 local wk = require('which-key')
 local opts = { prefix="<leader>" }
 local mapping = {
     s = {
-        name = "+search",
+        name = "search",
         r = {":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", "Search and Replace Word"},
-        a = {":cdo %s///gc<left><left><left><left>", "Search and Replace all"},
+        a = {":cdo! %s///gc<left><left><left><left>", "Search and Replace all"},
     },
 }
 wk.register(mapping, opts)
-
-
 
 
 

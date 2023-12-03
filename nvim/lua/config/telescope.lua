@@ -15,14 +15,20 @@ local mappings = {
         f = { builtin.find_files, 'Find Files' },
         b = { builtin.buffers, 'Find Buffers' },
         g = { builtin.git_files, 'Git Files' },
-        l = { builtin.live_grep, 'Live Grep' },
-        s = { function() 
-            builtin.grep_string({search = vim.fn.input("Grep String > ")})
-        end , 'Grep String' },
+        s = { builtin.live_grep, 'Live Search' },
     },
 }
 
 wk.register(mappings, opts)
+
+local mappings = {
+    ["<C-f>"] = { function() 
+            builtin.grep_string({search = vim.fn.input("Grep String > ")})
+        end , 'Grep String' },
+}
+
+wk.register(mappings, {})
+
 
 require('telescope').setup({
     defaults = {
@@ -36,6 +42,7 @@ require('telescope').setup({
             n = {
                 ["<C-d>"] = "delete_buffer",
                 ["<C-c>"] = "close",
+                q = "close",
                 ["<C-f>"] = "preview_scrolling_up",
                 ["<C-b>"] = "preview_scrolling_down",
                 ["<C-j>"] = actions.toggle_selection + actions.move_selection_next,
@@ -49,8 +56,16 @@ require('telescope').setup({
                 },
                 buffers = {
                   theme = "dropdown",
+                  initial_mode = "normal",
                 },
                 git_files = {
+                  theme = "dropdown",
+                },
+                live_grep = {
+                  theme = "dropdown",
+                },
+                grep_string = {
+                  initial_mode = "normal",
                   theme = "dropdown",
                 },
     },
