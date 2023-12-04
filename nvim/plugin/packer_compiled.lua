@@ -158,7 +158,7 @@ _G.packer_plugins = {
     url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp-path", "cmp-cmdline", "cmp-buffer" },
+    after = { "cmp-path", "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -198,6 +198,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
+    config = { "require('config.treesitter')" },
     loaded = true,
     path = "/home/scrutycs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -261,51 +262,55 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require('config.terminal')
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-require('config.dap')
-time([[Config for nvim-dap]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('config.treesitter')
+time([[Config for nvim-treesitter]], false)
 -- Config for: ultisnips
 time([[Config for ultisnips]], true)
 require('config.ultisnips')
 time([[Config for ultisnips]], false)
--- Config for: undotree
-time([[Config for undotree]], true)
-require('config.undotree')
-time([[Config for undotree]], false)
--- Config for: vim-fugitive
-time([[Config for vim-fugitive]], true)
-require('config.vim-fugitive')
-time([[Config for vim-fugitive]], false)
--- Config for: harpoon
-time([[Config for harpoon]], true)
-require('config.harpoon')
-time([[Config for harpoon]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('config.nvim-cmp')
 time([[Config for nvim-cmp]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require('config.vim-fugitive')
+time([[Config for vim-fugitive]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require('config.terminal')
+time([[Config for toggleterm.nvim]], false)
+-- Config for: harpoon
+time([[Config for harpoon]], true)
+require('config.harpoon')
+time([[Config for harpoon]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('config.telescope')
 time([[Config for telescope.nvim]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('config.nvim_comment')
-time([[Config for nvim-comment]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require('config.dap')
+time([[Config for nvim-dap]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('config.which-key')
 time([[Config for which-key.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('config.nvim_comment')
+time([[Config for nvim-comment]], false)
+-- Config for: undotree
+time([[Config for undotree]], true)
+require('config.undotree')
+time([[Config for undotree]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-path ]]
 time([[Sequenced loading]], false)
 

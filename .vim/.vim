@@ -1,0 +1,1 @@
+/home/scrutycs/dotfiles/.vim
