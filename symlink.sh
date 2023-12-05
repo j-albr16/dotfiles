@@ -2,9 +2,7 @@
 
 echo Creating Symbolic Links
 
-mkdir -p ~/.config/nvim
-
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s $(pwd)/.vimrc ~/.vimrc
+ln -s $(pwd)/.vim ~/.vim
+ln -s $(pwd)/.bash_aliases ~/.bash_aliases
 
