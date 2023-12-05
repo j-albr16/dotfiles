@@ -1,5 +1,4 @@
 -- Install Packer automatically if it's not installed(Bootstraping)
--- Hint: string concatenation is done by `..`
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -10,6 +9,7 @@ local ensure_packer = function()
     end
     return false
 end
+
 local packer_bootstrap = ensure_packer()
 
 
@@ -35,6 +35,7 @@ vim.cmd([[
 --     run = string, function, or table, -- Specify operations to be run after successful installs/updates of a plugin
 return require('packer').startup(function(use)
     -- Packer can manage itself
+    use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
     use { 'SirVer/ultisnips', config = [[require('config.ultisnips')]] }
     use 'honza/vim-snippets'
     use 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -54,8 +55,10 @@ return require('packer').startup(function(use)
         config = [[require('config.telescope')]]
     }
     use { 'github/copilot.vim' }
-    use { 'ThePrimeagen/harpoon', config = [[require('config.harpoon')]] }
-    use { 'mbbill/undotree', config = [[require('config.undotree')]] }
+    use { 'ThePrimeagen/harpoon',
+        config = [[require('config.harpoon')]],
+        requires = { {"nvim-lua/plenary.nvim"} }}
+    use { 'mbbill/undotree', config = [[require('config.undotree')]]}
     use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
@@ -69,7 +72,7 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-fugitive', config = [[require('config.vim-fugitive')]] }
     use { "akinsho/toggleterm.nvim", tag = '*', config = [[require('config.terminal')]] }
     use 'folke/neodev.nvim'
-    use { 'nvim-treesitter/nvim-treesitter' }
+    use { 'nvim-treesitter/nvim-treesitter', config = [[require('config.treesitter')]] }
     use { 'mfussenegger/nvim-dap', config = [[require('config.dap')]],
         requires = {
             'mfussenegger/nvim-dap-python',
