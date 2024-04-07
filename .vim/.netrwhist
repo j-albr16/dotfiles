@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
-let g:netrw_dirhist_6='/home/jan/Downloads'
-let g:netrw_dirhist_5='/home/jan/k8s/ansible/playbooks/server-prep'
-let g:netrw_dirhist_4='/home/jan/k8s/ansible/playbooks'
-let g:netrw_dirhist_3='/home/scrutycs/k8s/helm/gitlab'
-let g:netrw_dirhist_2='/home/scrutycs/k8s/helm'
-let g:netrw_dirhist_1='/home/scrutycs/k8s'
